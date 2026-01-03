@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Adnan Omar | BI & Data Analyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- General Styles --- */
+        :root {
+            --primary-color: #00eeff; /* Cyan accent for Tech/Data feel */
+            --bg-color: #0b111e;      /* Deep Dark Blue background */
+            --second-bg-color: #151c29;
+            --text-color: #edf2f4;
+            --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: var(--main-font);
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+
+        span {
+            color: var(--primary-color);
+        }
+
+        /* --- Header / Navbar --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background: rgba(11, 17, 30, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 700;
+            cursor: default;
+        }
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 3.5rem;
+            transition: .3s;
+            font-weight: 500;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary-color);
+        }
+
+        #menu-icon {
+            font-size: 3.6rem;
+            color: var(--text-color);
+            display: none;
+        }
+
+        /* --- Home Section --- */
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-content h3 {
+            font-size: 3.2rem;
+            font-weight: 700;
+        }
+
+        .home-content h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 1rem 0;
+        }
+
+        .home-content p {
+            font-size: 1.6rem;
+            margin: 2rem 0 3rem;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--primary-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--primary-color);
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: .1rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+
+        .btn:hover {
+            box-shadow: none;
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        /* --- About Section --- */
+        .about {
+            background: var(--second-bg-color);
+        }
+        
+        .heading {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-content h3 {
+            font-size: 2.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .edu-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .edu-box {
+            flex: 1;
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--primary-color);
+            text-align: left;
+            min-width: 300px;
+        }
+
+        .edu-box h4 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .edu-box h5 {
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+            color: #ccc;
+        }
+
+        /* --- Experience Section --- */
+        .experience h2 {
+            margin-bottom: 5rem;
+        }
+
+        .timeline-box {
+            background: var(--second-bg-color);
+            padding: 3rem;
+            border-radius: 2rem;
+            border-left: 5px solid var(--primary-color);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-header h3 {
+            font-size: 2.4rem;
+        }
+
+        .timeline-header span {
+            font-size: 1.4rem;
+            background: var(--bg-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .timeline-content ul {
+            list-style: none;
+        }
+
+        .timeline-content ul li {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.6;
+        }
+
+        .timeline-content ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* --- Skills Section --- */
+        .skills {
+            background: var(--second-bg-color);
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .skills-box {
+            flex: 1 1 20rem;
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: .4s;
+        }
+
+        .skills-box:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .skills-box i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skills-box h3 {
+            font-size: 1.8rem;
+        }
+
+        /* --- Certifications & Accolades --- */
+        .certs {
+            text-align: center;
+        }
+
+        .certs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--second-bg-color);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .cert-card h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card p {
+            font-size: 1.4rem;
+            color: #bbb;
+        }
+
+        /* --- Contact --- */
+        .contact {
+            background: var(--second-bg-color);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            font-size: 1.8rem;
+        }
+        
+        .info-item i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 9%;
+            background: var(--bg-color);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-text p {
+            font-size: 1.4rem;
+        }
+
+        .footer-iconTop a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: .8rem;
+            background: var(--primary-color);
+            border-radius: .8rem;
+            transition: .5s ease;
+        }
+
+        .footer-iconTop a i {
+            font-size: 2.4rem;
+            color: var(--bg-color);
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 991px) {
+            .header { padding: 2rem 3%; }
+            section { padding: 10rem 3% 2rem; }
+            .edu-container { flex-direction: column; }
+        }
+
+        @media (max-width: 768px) {
+            #menu-icon { display: block; }
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem 3%;
+                background: var(--bg-color);
+                border-top: 1px solid rgba(255,255,255,0.1);
+                display: none;
+            }
+            .navbar.active { display: block; }
+            .navbar a { display: block; font-size: 2rem; margin: 3rem 0; }
+            .home { flex-direction: column; text-align: center; }
+            .timeline-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">M A O</a>
+
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+<section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, I'm</h3>
+            <h1>Mohammad Adnan Omar</h1>
+            <h3>I am a <span>BI and Data Analyst</span></h3>
+            <p>A collaborative and detail-oriented analyst with 3.11 years of experience delivering high-impact analytics for global enterprise clients like Deutsche Bank, Alstom, and Baker Hughes. I specialize in turning complex data into actionable insights.</p>
+            
+            <a href="#contact" class="btn">Hire Me</a>
+            
+            <a href="https://drive.google.com/drive/folders/11R2x8iihWE2FEu3rX8pl6HTXTM0adMn8?usp=sharing" target="_blank" class="btn" style="margin-left: 1rem; background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color);">View CV</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        
+        <div class="about-content">
+            <p>
+                I am a Data Analyst specialized in Power BI, SQL (SSMS/T-SQL), DAX, and Azure-based analytics. With a strong foundation in ETL pipelines and data modeling, I have a proven ability to transform large, multi-source datasets into insights that improve operational efficiency. 
+                <br><br>
+                I am ITIL-certified with deep experience in ITSM analytics (Incident, Change, and SLA Management) and am committed to delivering scalable solutions that drive measurable business outcomes.
+            </p>
+
+            <h3 style="margin-top: 3rem;">Education</h3>
+            <div class="edu-container">
+                <div class="edu-box">
+                    <h4>M.C.A (Master of Computer Applications)</h4>
+                    <h5>JNTUA | Nov 2021 - Sept 2023</h5>
+                    <p>CGPA: 8.21</p>
+                </div>
+                <div class="edu-box">
+                    <h4>B.Sc. (M.S.CA)</h4>
+                    <h5>Sri Krishnadevaraya University | 2018 - 2021</h5>
+                    <p>CGPA: 8.59</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <h2 class="heading">Professional <span>Experience</span></h2>
+
+        <div class="timeline-box">
+            <div class="timeline-header">
+                <div>
+                    <h3>Data Analyst</h3>
+                    <p style="color: #ccc; font-size: 1.6rem;">DXC Technology, Bengaluru</p>
+                </div>
+                <span>March 2022 - Present</span>
+            </div>
+            
+            <div class="timeline-content">
+                <p style="margin-bottom: 1.5rem; font-style: italic; color: var(--primary-color);">Domain: VPC NGP Infrastructure Analytics & Reporting</p>
+                <ul>
+                    <li>Delivered enterprise-scale Power BI dashboards supporting global clients across infrastructure domains (servers, networks, storage).</li>
+                    <li>Designed and optimized <strong>20+ Power BI reports</strong>, translating raw operational data into KPIs and performance insights.</li>
+                    <li>Built ETL workflows using Power Query, SQL, and Python, improving data accuracy by <strong>~30%</strong> through robust validation.</li>
+                    <li>Utilized complex SQL queries (SSMS/T-SQL) to reduce manual data preparation effort by <strong>35%</strong>.</li>
+                    <li>Implemented DAX measures for SLA compliance, MTTR, and backlog aging, improving reporting consistency.</li>
+                    <li>Contributed to a <strong>15-20% improvement</strong> in SLA monitoring efficiency through service management analytics.</li>
+                    <li>Reduced Power BI report load times by 25% by applying Star Schema modeling and refresh optimization.</li>
+                    <li>Automated workflows using Power Automate, reducing manual follow-ups by <strong>~25%</strong>.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">Technical <span>Skills</span></h2>
+
+        <div class="skills-container">
+            <div class="skills-box">
+                <i class="fa-solid fa-chart-simple"></i>
+                <h3>Power BI & DAX</h3>
+                <p>Interactive Dashboards, KPI Design, RLS</p>
+            </div>
+            <div class="skills-box">
+                <i class="fa-solid fa-database"></i>
+                <h3>SQL (SSMS/T-SQL)</h3>
+                <p>Query Optimization, Data Extraction, Manipulation</p>
+            </div>
+            <div class="skills-box">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Azure Cloud</h3>
+                <p>ADF Exposure, VPC Environments</p>
+            </div>
+            <div class="skills-box">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+                <p>Data Analysis & Automation</p>
+            </div>
+            <div class="skills-box">
+                <i class="fa-solid fa-file-excel"></i>
+                <h3>Advanced Excel</h3>
+                <p>Power Query, Reporting</p>
+            </div>
+             <div class="skills-box">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Tools</h3>
+                <p>ServiceNow, SharePoint, Jira, Power Automate</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="certs" id="certifications">
+        <h2 class="heading">Certifications & <span>Accolades</span></h2>
+
+        <div class="certs-container">
+            <div class="cert-card">
+                <h4>Microsoft PL-300</h4>
+                <p>Power BI Data Analyst Associate</p>
+            </div>
+            <div class="cert-card">
+                <h4>Azure Administrator</h4>
+                <p>Associate (AZ-104)</p>
+            </div>
+            <div class="cert-card">
+                <h4>Azure Fundamentals</h4>
+                <p>AZ-900</p>
+            </div>
+            <div class="cert-card">
+                <h4>AWS Certified</h4>
+                <p>Cloud Practitioner (CLF-CO1)</p>
+            </div>
+            <div class="cert-card">
+                <h4>ITIL 4 Foundation</h4>
+                <p>IT Service Management</p>
+            </div>
+
+            <div class="cert-card" style="border-top-color: #fca61f;">
+                <h4 style="color: #fca61f;">H1 Champion</h4>
+                <p>Collaborators Award (Q2 2023)</p></br>
+
+            <div class="cert-card" style="border-top-color: #fca61f;">
+                <h4 style="color: #fca61f;">H4 Champion</h4>
+                <p>H1 Champion Collaborators Award (2024) - DXC Technology</p>
+
+
+            </div>
+        </div>
+    </section>
+
+<div class="cert-card" style="border-top-color: #fca61f; display: grid; place-items: center; text-align: center; min-height: 200px;">
+    <h4 style="color: #fca61f;"> Languages </h4>
+    <p><br>English (C1)</br><br>Hindi (C2)</br><br>Telugu (B2)</br></p>
+</div>
+
+
+
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i> +91-9346033605
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i> adnanomar0002@gmail.com
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i> Bengaluru, India
+            </div>
+        </div>
+        
+    
+
+        <a href="mailto:adnanomar0002@gmail.com" class="btn">Send Email</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2026 by Mohammad Adnan Omar | All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        };
+
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(links => {
+                        links.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                    });
+                };
+            });
+
+            let header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 100);
+            
+            menuIcon.classList.remove('fa-xmark');
+            navbar.classList.remove('active');
+        };
+    </script>
+</body>
+</html>
